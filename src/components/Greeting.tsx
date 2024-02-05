@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { styled } from '@stitches/react';
 import useOnScreen from '../hooks/useOnScreen';
 import { ConfigsType } from '@/configs/configs';
+import { useIsMobile } from '@/hooks/isMobile';
 
 type GreetingProps = {
   config: ConfigsType;
@@ -10,17 +11,17 @@ type GreetingProps = {
 const Greeting = ({ config }: GreetingProps) => {
   const ref = useRef<HTMLSelectElement>(null);
   const onScreen: boolean = useOnScreen<HTMLDivElement>(ref, '-125px');
-  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const isMobile = useIsMobile();
 
   const Layout = styled('div', {
     width: '100%',
-    padding: isPortrait ? '30% 0% 15% 5%' : '5% 0% 5% 10%',
+    padding: isMobile ? '30% 0% 15% 5%' : '5% 0% 5% 10%',
   });
 
   const Title = styled('p', {
     color: '#795548',
     width: '100%',
-    fontSize: isPortrait ? '2.5em' : '3.5em',
+    fontSize: isMobile ? '2.5em' : '3.5em',
     margin: 0,
     fontWeight: '500',
   });
@@ -28,7 +29,7 @@ const Greeting = ({ config }: GreetingProps) => {
   const SubTitle = styled('p', {
     color: '#795548',
     width: '100%',
-    fontSize: isPortrait ? '1.2em' : '2em',
+    fontSize: isMobile ? '1.2em' : '2em',
     margin: '24px 0',
     fontWeight: '300',
     lineHeight: 1.8,

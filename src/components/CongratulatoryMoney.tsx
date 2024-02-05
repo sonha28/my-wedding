@@ -6,6 +6,7 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import HongBao from './HongBao';
 import { ConfigsType } from '@/configs/configs';
 import Modal from './Modal';
+import { useIsMobile } from '@/hooks/isMobile';
 
 type CongratulatoryMoneyProps = {
   config: ConfigsType;
@@ -14,7 +15,7 @@ type CongratulatoryMoneyProps = {
 const CongratulatoryMoney = ({ config }: CongratulatoryMoneyProps) => {
   const [groomVisible, setGroomVisible] = useState<boolean>(false);
   const [brideVisible, setBrideVisible] = useState<boolean>(false);
-  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const isMobile = useIsMobile();
 
   const Section = styled('section', {
     background: '#EFEBE9',
@@ -24,13 +25,13 @@ const CongratulatoryMoney = ({ config }: CongratulatoryMoneyProps) => {
 
   const Layout = styled('div', {
     width: '100%',
-    padding: isPortrait ? '10% 0% 10% 5%' : '5% 0% 5% 10%',
+    padding: isMobile ? '10% 0% 10% 5%' : '5% 0% 5% 10%',
   });
 
   const Title = styled('p', {
     color: '#795548',
     width: '100%',
-    fontSize: isPortrait ? '2.5em' : '3.5em',
+    fontSize: isMobile ? '2.5em' : '3.5em',
     margin: 0,
     fontWeight: '500',
   });
@@ -38,7 +39,7 @@ const CongratulatoryMoney = ({ config }: CongratulatoryMoneyProps) => {
   const SubTitle = styled('p', {
     color: '#795548',
     width: '100%',
-    fontSize: isPortrait ? '1.2em' : '2em',
+    fontSize: isMobile ? '1.2em' : '2em',
     margin: '24px 0',
     fontWeight: '300',
     lineHeight: 1.8,

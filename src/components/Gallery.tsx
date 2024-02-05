@@ -5,6 +5,7 @@ import useOnScreen from '../hooks/useOnScreen';
 import { useWindowSize } from 'react-use';
 import { ConfigsType } from '@/configs/configs';
 import { useRef } from 'react';
+import { useIsMobile } from '@/hooks/isMobile';
 
 type GalleryProps = {
   config: ConfigsType;
@@ -15,17 +16,17 @@ const Gallery = ({ config }: GalleryProps) => {
 
   const ref = useRef<HTMLSelectElement>(null);
   const onScreen: boolean = useOnScreen<HTMLDivElement>(ref, '-125px');
-  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const isMobile = useIsMobile();
 
   const Layout = styled('div', {
     width: '100%',
-    padding: isPortrait ? '30% 0% 15% 5%' : '5% 0% 5% 10%',
+    padding: isMobile ? '30% 0% 15% 5%' : '5% 0% 5% 10%',
   });
 
   const Title = styled('p', {
     color: '#FFFFFF',
     width: '100%',
-    fontSize: isPortrait ? '2.5em' : '3.5em',
+    fontSize: isMobile ? '2.5em' : '3.5em',
     margin: 0,
     fontWeight: '500',
   });
@@ -46,8 +47,8 @@ const Gallery = ({ config }: GalleryProps) => {
       </Layout>
       <Row gutter={[16, 16]}>
         {config.galleryImages.map((image, index) => (
-          <Col key={index} span={isPortrait ? 6 : 3}>
-            <Image width={isPortrait ? width / 4 - 10 : width / 8 - 10} src={image} />
+          <Col key={index} span={isMobile ? 6 : 3}>
+            <Image width={isMobile ? width / 4 - 10 : width / 8 - 10} src={image} />
           </Col>
         ))}
       </Row>

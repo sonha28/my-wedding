@@ -1,3 +1,4 @@
+import { useIsMobile } from '@/hooks/isMobile';
 import { styled } from '@stitches/react';
 
 type HongBaoProps = {
@@ -7,7 +8,7 @@ type HongBaoProps = {
 };
 
 const HongBao = ({ title, subTitle, onClick }: HongBaoProps) => {
-  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const isMobile = useIsMobile();
 
   const Layout = styled('div', {
     textAlign: 'center',
@@ -33,8 +34,8 @@ const HongBao = ({ title, subTitle, onClick }: HongBaoProps) => {
   });
 
   const Sticker = styled('div', {
-    width: isPortrait ? '2.2em' : '6em',
-    height: isPortrait ? '2.2em' : '6em',
+    width: isMobile ? '2.2em' : '6em',
+    height: isMobile ? '2.2em' : '6em',
     border: '1px solid #FFA73A',
     backgroundColor: '#FFA73A',
     borderRadius: '50%',
@@ -44,11 +45,11 @@ const HongBao = ({ title, subTitle, onClick }: HongBaoProps) => {
     marginTop: '-3em',
   });
 
-  const Title = styled('h2', { fontSize: isPortrait ? '1.5em' : '3em', color: '#FFF' });
+  const Title = styled('h2', { fontSize: isMobile ? '1.5em' : '3em', color: '#FFF' });
 
   const SubTitle = styled('div', {
     margin: '15px 0',
-    fontSize: isPortrait ? '0.8em' : '2em',
+    fontSize: isMobile ? '0.8em' : '2em',
     fontWeight: 600,
     color: '#EEEEEE',
   });

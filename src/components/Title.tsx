@@ -13,6 +13,7 @@ import { useIsMobile } from '@/hooks/isMobile';
 
 const dancing_Script = Dancing_Script({
   weight: '400',
+  subsets: ['latin', 'vietnamese'],
 });
 
 const Title = ({ config }: TitleProps) => {

@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { styled } from '@stitches/react';
 import { ConfigsType } from '@/configs/configs';
+import { useIsMobile } from '@/hooks/isMobile';
 
 type LocationProps = {
   config: ConfigsType;
@@ -8,7 +9,7 @@ type LocationProps = {
 
 const Location = ({ config }: LocationProps) => {
   const ref = useRef<HTMLSelectElement>(null);
-  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const isMobile = useIsMobile();
 
   const Section = styled('section', {
     background: '#EFEBE9',
@@ -18,13 +19,13 @@ const Location = ({ config }: LocationProps) => {
 
   const Layout = styled('div', {
     width: '100%',
-    padding: isPortrait ? '20% 0% 15% 5%' : '5% 0% 5% 10%',
+    padding: isMobile ? '20% 0% 15% 5%' : '5% 0% 5% 10%',
   });
 
   const Title = styled('p', {
     color: '#795548',
     width: '100%',
-    fontSize: isPortrait ? '2.5em' : '3.5em',
+    fontSize: isMobile ? '2.5em' : '3.5em',
     margin: 0,
     fontWeight: '500',
   });
@@ -32,7 +33,7 @@ const Location = ({ config }: LocationProps) => {
   const SubTitle = styled('p', {
     color: '#795548',
     width: '100%',
-    fontSize: isPortrait ? '1.2em' : '2em',
+    fontSize: isMobile ? '1.2em' : '2em',
     margin: '24px 0',
     fontWeight: '300',
     lineHeight: 1.8,
@@ -51,7 +52,7 @@ const Location = ({ config }: LocationProps) => {
           <br />
           <br />
           <img
-            style={{ width: isPortrait ? '90%' : '60%' }}
+            style={{ width: isMobile ? '90%' : '60%' }}
             src={config.locationMapImage}
             alt="Wedding Invitation Title Picutre"
           />
