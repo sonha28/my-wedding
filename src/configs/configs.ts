@@ -11,23 +11,25 @@ const Configs: ConfigsType = {
   url: 'http://localhost:3000',
   kakaoToken: '카카오톡 API 토큰을 입력해주세요!',
   kakaoImage: '카카오톡으로 공유할 때 사용되는 대표이미지 URL을 입력해주세요!',
-  weddingDate: '1970년 01월 01일, 목요일 오전 12시 00분',
-  weddingLocation: '○○○웨딩, ○층 ○○홀',
+  weddingDate: '25/02/2024',
+  weddingLocation: 'Trống đồng Quán sứ',
   groom: {
-    name: 'Sơn Hoàng',
-    accountNumber: '○○은행 ***-***-******',
-    fatherName: '○○○',
-    fatherAccountNumber: '○○은행 ***-***-******',
-    motherName: '○○○',
-    motherAccountNumber: '○○은행 ***-***-******',
+    fullName: 'Hoàng Anh Sơn',
+    name: 'Anh Sơn',
+    accountNumber: 'Techcombank ***-***-******',
+    fatherName: 'Hoàng Văn Thịnh',
+    fatherAccountNumber: 'Techcombank ***-***-******',
+    motherName: 'Vũ Thị Minh Trung',
+    motherAccountNumber: 'Techcombank ***-***-******',
   },
   bride: {
+    fullName: 'Hà Kiều Anh',
     name: 'Kiều Anh',
-    accountNumber: '○○은행 ***-***-******',
-    fatherName: '○○○',
-    fatherAccountNumber: '○○은행 ***-***-******',
-    motherName: '○○○',
-    motherAccountNumber: '○○은행 ***-***-******',
+    accountNumber: 'Techcombank ***-***-******',
+    fatherName: 'Hà Bảo Phương',
+    fatherAccountNumber: 'Techcombank ***-***-******',
+    motherName: 'Nguyễn Thị Vân',
+    motherAccountNumber: 'Techcombank ***-***-******',
   },
   titleImage: '/resources/Title.JPG',
   titleImageW: '/resources/Title-w.JPG',
@@ -69,6 +71,7 @@ export type ConfigsType = {
 };
 
 type Person = {
+  fullName: string;
   name: string;
   accountNumber: string;
   fatherName?: string;

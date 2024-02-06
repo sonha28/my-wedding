@@ -44,7 +44,7 @@ const Gallery = ({ config }: GalleryProps) => {
       }}
     >
       <Layout>
-        <Title>우리의 아름다운 순간</Title>
+        <Title>Gallery 2</Title>
       </Layout>
       <div className={`grid gap-2 pb-8 px-4 ${isMobile ? 'grid-cols-4' : 'grid-cols-8'}`}>
         {config.galleryImages.map((image, index) => (

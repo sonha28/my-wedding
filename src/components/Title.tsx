@@ -60,7 +60,7 @@ const Title = ({ config }: TitleProps) => {
         width={width}
         height={height}
         numberOfPieces={50}
-        gravity={0.05}
+        gravity={0.01}
         colors={['#FFCDD2', '#F8BBD0', '#D1C4E9']}
         recycle={true}
         style={{ position: 'fixed' }}
@@ -69,7 +69,7 @@ const Title = ({ config }: TitleProps) => {
         <Layout>
           <SubTitleLayout>WEDDING INVITATION</SubTitleLayout>
           <div className={`flex flex-col justify-center items-center`}>
-            <div className={`flex flex-row text-left ${isMobile ? ' pr-6' : ' pr-80'}`}>
+            <div className={`flex flex-row text-left ${isMobile ? ' pr-36' : ' pr-80'}`}>
               <TitleLayout
                 className={` ${isMobile ? 'text-[50px]' : 'text-[90px]'} ${
                   dancing_Script.className
@@ -78,7 +78,7 @@ const Title = ({ config }: TitleProps) => {
                 {config.groom.name}
               </TitleLayout>
             </div>
-            <div className={`flex flex-row text-left ${isMobile ? ' pl-6' : 'pl-96'}`}>
+            <div className={`flex flex-row text-left ${isMobile ? ' pl-36' : 'pl-96'}`}>
               <TitleLayout
                 className={` ${isMobile ? 'text-[50px]' : 'text-[90px]'} ${
                   dancing_Script.className
@@ -89,7 +89,7 @@ const Title = ({ config }: TitleProps) => {
             </div>
             <div
               className={`flex flex-row left-1/2 ${
-                isMobile ? ' bottom-38' : ' bottom-56'
+                isMobile ? ' bottom-37' : ' bottom-56'
               } absolute`}
             >
               <TitleLayout

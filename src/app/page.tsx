@@ -8,6 +8,8 @@ import Location from '@/components/Location';
 import Share from '@/components/Share';
 import { Footer } from 'antd/lib/layout/layout';
 import Configs from '@/configs/configs';
+import GallerySlide from '@/components/Gallery-slide';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 export default function Home() {
   return (
@@ -15,6 +17,7 @@ export default function Home() {
     {/* <main className="flex min-h-screen flex-col items-center justify-between p-24"> */}
       <TitleLayout config={Configs} />
       <Greeting config={Configs} />
+      <GallerySlide/>
       <Gallery config={Configs} />
       <Location config={Configs} />
       <CongratulatoryMoney config={Configs} />
