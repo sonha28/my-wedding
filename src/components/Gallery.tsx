@@ -6,6 +6,7 @@ import { useWindowSize } from 'react-use';
 import { ConfigsType } from '@/configs/configs';
 import { useRef } from 'react';
 import { useIsMobile } from '@/hooks/isMobile';
+// import Image from 'next/image';
 
 type GalleryProps = {
   config: ConfigsType;
@@ -35,9 +36,9 @@ const Gallery = ({ config }: GalleryProps) => {
     <section
       ref={ref}
       style={{
-        height: '100vh',
+        // height: '100vh',
         background: onScreen ? '#212121' : '#EFEBE9',
-        overflow: 'hidden',
+        // overflow: 'hidden',
         position: 'relative',
         transition: 'background 1s ease-in',
       }}
@@ -45,13 +46,22 @@ const Gallery = ({ config }: GalleryProps) => {
       <Layout>
         <Title>우리의 아름다운 순간</Title>
       </Layout>
-      <Row gutter={[16, 16]}>
+      <div className={`grid gap-2 pb-8 px-4 ${isMobile ? 'grid-cols-4' : 'grid-cols-8'}`}>
         {config.galleryImages.map((image, index) => (
-          <Col key={index} span={isMobile ? 6 : 3}>
-            <Image width={isMobile ? width / 4 - 10 : width / 8 - 10} src={image} />
-          </Col>
+          <div className={`flex overflow-hidden`} key={index}>
+            <Image
+              alt=""
+              width={isMobile ? width/4 -10: width/8 -10}
+              height={206}
+              src={image}
+              style={{
+                objectFit: 'cover',
+              }}
+              loading="lazy"
+            />
+          </div>
         ))}
-      </Row>
+      </div>
     </section>
   );
 };
