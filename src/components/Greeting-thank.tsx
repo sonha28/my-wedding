@@ -63,10 +63,13 @@ const GreetingThank = ({ config }: GreetingProps) => {
         <Image src="/resources/intro-title-flower1.png" alt="heart" width={200} height={42} />
         <Title className={` pt-10 text-6xl ${dancing_Script.className}`}>Lời Ngỏ</Title>
         <Divider plain className="py-4" />
-        <SubTitle className={`${cormorant_caramond.className} py-8 ${isMobile ? 'px-4' : ' px-14'}`}>
-          Cảm ơn tất cả những người bạn thân yêu của tôi! Tôi biết các bạn rất bận rộn, bận rộn với
-          công việc, bận rộn với công việc gia đình… Nhưng tất cả đã có mặt hôm nay để chúc mừng
-          tinh yêu và hạnh phúc của chúng tôi.Một lần nữa chân thành cảm ơn tất cả các bạn!
+        <SubTitle
+          className={`${cormorant_caramond.className} py-8 ${isMobile ? 'px-4' : ' px-14'}`}
+        >
+          Gửi tới những những người bạn thân yêu của tôi! Tôi biết cuộc sống của bạn rất bận rộn,
+          nhưng tôi sẽ rất cảm kích nếu bạn dành chút thời gian tới dự hôn lễ và chung vui với chúng
+          tôi trong ngày trọng đại của cuộc đời. Sự có mặt của bạn sẽ là niềm vui và vinh dự đối với
+          gia đình chúng tôi. Chúng tôi xin chân thành cảm ơn tất cả các bạn!
         </SubTitle>
         <SubTitle className="flex flex-row items-center justify-center gap-4">
           <span className={` text-3xl ${dancing_Script.className}`}>{config.groom.name}</span>

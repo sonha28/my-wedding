@@ -21,7 +21,7 @@ type GreetingProps = {
   config: ConfigsType;
 };
 
-const Greeting = ({ config }: GreetingProps) => {
+const Quote = ({ config }: GreetingProps) => {
   const ref = useRef<HTMLSelectElement>(null);
   const onScreen: boolean = useOnScreen<HTMLDivElement>(ref, '-125px');
   const isMobile = useIsMobile();
@@ -41,66 +41,42 @@ const Greeting = ({ config }: GreetingProps) => {
   });
 
   const SubTitle = styled('p', {
-    color: '#795548',
+    color: '#fff',
     width: '100%',
     textAlign: 'center',
-    fontSize: isMobile ? '1.2em' : '2em',
+    fontSize: isMobile ? '1.2em' : '2.3em',
     fontWeight: '300',
     lineHeight: 1.8,
   });
-
-  const Groom = () => {
-    const { width } = useWindowSize();
-    return (
-      <div className={`flex flex-col gap-4 items-center`}>
-        <div className="p-4 rounded-3xl w-full">
-          <div className="w-full h-[250px] overflow-hidden rounded-3xl">
-            <Image
-              width="0"
-              height="0"
-              sizes="100vw"
-              className="w-full h-auto rounded-xl"
-              src="/resources/groom.JPG"
-              alt=""
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <SubTitle className={` pt-10 text-6xl ${dancing_Script.className}`}>
-              Hoàng Anh Sơn
-            </SubTitle>
-            <Image
-              width={width * 0.8}
-              height="0"
-              src="/resources/underline.png"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    );
-  };
+  const { width, height } = useWindowSize();
 
   return (
     <section
       ref={ref}
       style={{
-        height: '100%',
+        height: '0%',
         background: '#e5e5e5',
         overflow: 'hidden',
         position: 'relative',
         transition: 'background 1s ease-in',
       }}
     >
-      <Layout className=" flex flex-col items-center">
-        <Title className={` pt-10 text-6xl ${dancing_Script.className}`}>Cô Dâu & Chú Rể</Title>
+      <SubTitle className={` z-50 absolute m-auto left-0 right-0 top-[30%] px-16 ${dancing_Script.className}`}>
+        “No matter where you are, or what you’re doing,…it doesn’t matter it doesn’t change it, I
+        have and I always will, honestly, truly, completely love you”
+      </SubTitle>
 
-        <div className=" flex flex-row gap-6">
-          <Groom />
-          <Groom />
-        </div>
-      </Layout>
+      <div className="">
+        <Image
+          src="/resources/image-quote.JPG"
+          alt="heart"
+          className="  blur-md"
+          width={width}
+          height={42}
+        />
+      </div>
     </section>
   );
 };
 
-export default Greeting;
+export default Quote;

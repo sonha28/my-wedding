@@ -121,7 +121,7 @@ const Title = ({ config }: TitleProps) => {
           </div>
           <Divider />{' '}
         </Layout>
-        <div className=" w-screen h-screen">
+        <div className=" w-screen h-[100vh]">
           <Image
             className={`${isMobile ? 'pt-16' : ''}`}
             width={width}

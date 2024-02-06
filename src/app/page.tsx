@@ -17,6 +17,7 @@ import { useIsMobile } from '@/hooks/isMobile';
 import { useWindowSize } from 'react-use';
 import { Button, Modal } from 'antd';
 import { useState } from 'react';
+import Quote from '@/components/Quote';
 
 const dancing_Script = Dancing_Script({
   weight: '400',
@@ -35,7 +36,6 @@ export default function Home() {
   });
   const { width, height } = useWindowSize();
 
-
   const TitleModal = styled('h2', { fontSize: isMobile ? '2em' : '3.5em', color: '#FFF' });
 
   const SubTitleModal = styled('div', {
@@ -49,8 +49,9 @@ export default function Home() {
       {/* <main className="flex min-h-screen flex-col items-center justify-between p-24"> */}
       <TitleLayout config={Configs} />
       <GreetingThank config={Configs} />
-      <Greeting config={Configs} />
+      {/* <Greeting config={Configs} /> */}
       <GallerySlide />
+      <Quote config={Configs} />
       {/* <Gallery config={Configs} /> */}
       <Location config={Configs} />
       <CongratulatoryMoney config={Configs} />
