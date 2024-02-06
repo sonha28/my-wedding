@@ -39,8 +39,8 @@ const Greeting = ({ config }: GreetingProps) => {
     <section
       ref={ref}
       style={{
-        height: '100vh',
-        background: onScreen ? '#EFEBE9' : '#DADADA',
+        height: '100%',
+        background:  '#e5e5e5',
         overflow: 'hidden',
         position: 'relative',
         transition: 'background 1s ease-in',

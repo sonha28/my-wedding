@@ -8,14 +8,20 @@ import { useWindowSize } from 'react-use';
 type TitleProps = {
   config: ConfigsType;
 };
-import { Dancing_Script } from 'next/font/google';
 import { useIsMobile } from '@/hooks/isMobile';
+import { Dancing_Script, Cormorant_Garamond } from 'next/font/google';
+import { Divider } from 'antd';
 
 const dancing_Script = Dancing_Script({
   weight: '400',
   subsets: ['latin', 'vietnamese'],
 });
 
+const cormorant_caramond = Cormorant_Garamond({
+  weight: '400',
+  subsets: ['latin', 'vietnamese'],
+  style: 'italic',
+});
 const Title = ({ config }: TitleProps) => {
   const { width, height } = useWindowSize();
   const isMobile = useIsMobile();
@@ -44,14 +50,15 @@ const Title = ({ config }: TitleProps) => {
     width: '100%',
     // fontSize: isMobile ? '2.5em' : '3.5em',
     margin: 0,
+    textShadow: isMobile ? '2px 2px 4px rgba(93 64 55 / 35%)' : '2px 2px 4px rgba(93 64 55 / 55%)',
   });
 
   const SubTitleLayout = styled('p', {
     width: '100%',
-    fontSize: isMobile ? '1.2em' : '2em',
     textAlign: 'center',
-    margin: '24px 0',
+    // margin: '8px 0',
     fontWeight: '300',
+    textShadow: isMobile ? '2px 2px 4px rgba(93 64 55 / 35%)' : '1px 1px 3px rgba(93 64 55 / 55%)',
   });
 
   return (
@@ -61,13 +68,24 @@ const Title = ({ config }: TitleProps) => {
         height={height}
         numberOfPieces={50}
         gravity={0.01}
-        colors={['#FFCDD2', '#F8BBD0', '#D1C4E9']}
+        colors={['#FFCDD2', '#D1C4E9', '#74c7e8', '#f47a8b']}
         recycle={true}
         style={{ position: 'fixed' }}
       />
       <Section>
         <Layout>
-          <SubTitleLayout>WEDDING INVITATION</SubTitleLayout>
+          <SubTitleLayout
+            className={`${cormorant_caramond.className} pt-6 drop-shadow-lg ${
+              isMobile ? ' text-3xl' : 'text-5xl'
+            }`}
+          >
+            Save the date
+          </SubTitleLayout>
+          <SubTitleLayout
+            className={`${cormorant_caramond.className}  ${isMobile ? ' text-xl' : 'text-2xl'}`}
+          >
+            {config.weddingDate}
+          </SubTitleLayout>
           <div className={`flex flex-col justify-center items-center`}>
             <div className={`flex flex-row text-left ${isMobile ? ' pr-36' : ' pr-80'}`}>
               <TitleLayout
@@ -89,7 +107,7 @@ const Title = ({ config }: TitleProps) => {
             </div>
             <div
               className={`flex flex-row left-1/2 ${
-                isMobile ? ' bottom-37' : ' bottom-56'
+                isMobile ? ' bottom-[56px]' : ' bottom-[84px]'
               } absolute`}
             >
               <TitleLayout
@@ -101,12 +119,7 @@ const Title = ({ config }: TitleProps) => {
               </TitleLayout>
             </div>
           </div>
-
-          <SubTitleLayout>
-            {config.weddingDate}
-            <br />
-            {config.weddingLocation}
-          </SubTitleLayout>
+          <Divider />{' '}
         </Layout>
         <div className=" w-screen h-screen">
           <Image

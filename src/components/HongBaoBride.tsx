@@ -14,7 +14,7 @@ type HongBaoProps = {
   onClick?: () => void;
 };
 
-const HongBao = ({ title, subTitle, onClick }: HongBaoProps) => {
+const HongBaoBride = ({ title, subTitle, onClick }: HongBaoProps) => {
   const isMobile = useIsMobile();
 
   const Layout = styled('div', {
@@ -25,7 +25,7 @@ const HongBao = ({ title, subTitle, onClick }: HongBaoProps) => {
   });
 
   const Envelope = styled('div', {
-    background: '#50b8e2',
+    background: '#f56b7e',
     width: '100%',
     borderRadius: '10px',
     margin: '0 auto',
@@ -34,8 +34,8 @@ const HongBao = ({ title, subTitle, onClick }: HongBaoProps) => {
 
   const Cover = styled('div', {
     padding: '20% 0',
-    border: '1px solid #74c7e8',
-    backgroundColor: '#74c7e8',
+    border: '1px solid #f47a8b',
+    backgroundColor: '#f47a8b',
     borderRadius: '10px 10px 50% 50% / 10px 10px 15% 15%',
     boxShadow: '0px 4px 0px -1px rgba(0,0,0,0.2)',
   });
@@ -73,4 +73,4 @@ const HongBao = ({ title, subTitle, onClick }: HongBaoProps) => {
   );
 };
 
-export default HongBao;
+export default HongBaoBride;
