@@ -54,6 +54,8 @@ const Location = ({ config }: LocationProps) => {
         <SubTitle className={`${cormorant_caramond.className}`}>
           Trống Đồng Palace - Tầng 3
           <br />
+          11:00 - 25/02/2024
+          <br />
           Địa chỉ: 65 P. Quán Sứ, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội
           <br />
           <br />

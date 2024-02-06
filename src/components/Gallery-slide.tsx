@@ -29,7 +29,7 @@ const GallerySlide = () => {
   return (
     <div className={`w-full p-11 bg-[#efebe9] bg-[url('/resources/GroovePaper.png')]`}>
       <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
-        <p className=" text-6xl ">Gallery 1</p>
+        {/* <p className=" text-6xl ">Gallery 1</p> */}
       </Divider>
       <ReactImageGallery showPlayButton={false} showFullscreenButton={false} items={images} />
     </div>

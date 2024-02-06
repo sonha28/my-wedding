@@ -136,8 +136,8 @@ const CongratulatoryMoney = ({ config }: CongratulatoryMoneyProps) => {
           objectPosition="center top"
           onClick={() => setBrideVisible(false)}
         />
-        <Title className={`${cormorant_caramond.className}`}>Nhà Trai</Title>
-        <SubTitle className={`${cormorant_caramond.className}`}>Hoàng Anh Sơn</SubTitle>
+        <Title className={`${cormorant_caramond.className}`}>Nhà Gái</Title>
+        <SubTitle className={`${cormorant_caramond.className}`}>Hà Kiều Anh</SubTitle>
         <SubTitle className={`${cormorant_caramond.className}`}>
           Techcombank - 1902 73400 44017
         </SubTitle>
