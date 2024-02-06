@@ -3,7 +3,8 @@ import { styled } from '@stitches/react';
 import { ConfigsType } from '@/configs/configs';
 import { useIsMobile } from '@/hooks/isMobile';
 import { useWindowSize } from 'react-use';
-import {  Cormorant_Garamond } from 'next/font/google';
+import { Cormorant_Garamond } from 'next/font/google';
+import { Divider } from 'antd';
 
 const cormorant_caramond = Cormorant_Garamond({
   weight: '400',
@@ -50,13 +51,13 @@ const Location = ({ config }: LocationProps) => {
   return (
     <Section ref={ref}>
       <Layout>
-        <Title className={`${cormorant_caramond.className}`} >Lễ cưới được tổ chức tại</Title>
+        <Title className={`${cormorant_caramond.className}`}>Lễ cưới được tổ chức tại</Title>
         <SubTitle className={`${cormorant_caramond.className}`}>
           Trống Đồng Palace - Tầng 3
           <br />
-          11:00 - 25/02/2024
-          <br />
           Địa chỉ: 65 P. Quán Sứ, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội
+          <br />
+          Vào lúc 11 giờ 00, Chủ nhật (25.02.2024)
           <br />
           <br />
           <div className="google-map-code">

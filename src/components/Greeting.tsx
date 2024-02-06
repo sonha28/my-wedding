@@ -3,6 +3,7 @@ import { styled } from '@stitches/react';
 import useOnScreen from '../hooks/useOnScreen';
 import { ConfigsType } from '@/configs/configs';
 import { useIsMobile } from '@/hooks/isMobile';
+import Image from 'next/image';
 
 type GreetingProps = {
   config: ConfigsType;
@@ -15,7 +16,7 @@ const Greeting = ({ config }: GreetingProps) => {
 
   const Layout = styled('div', {
     width: '100%',
-    padding: isMobile ? '30% 0% 15% 5%' : '5% 0% 5% 10%',
+    padding: isMobile ? '15% 5% 15% 5%' : '5% 10% 5% 10%',
   });
 
   const Title = styled('p', {
@@ -40,14 +41,14 @@ const Greeting = ({ config }: GreetingProps) => {
       ref={ref}
       style={{
         height: '100%',
-        background:  '#e5e5e5',
+        background: '#e5e5e5',
         overflow: 'hidden',
         position: 'relative',
         transition: 'background 1s ease-in',
       }}
     >
       <Layout>
-        <Title>Titile Titile</Title>
+        {/* <Title>Titile Titile</Title>
         <SubTitle>
           Cô dâu {config.bride.name}
           <br />
@@ -69,7 +70,34 @@ const Greeting = ({ config }: GreetingProps) => {
           {config.groom.fullName} con trai của {config.groom.fatherName} · {config.groom.motherName}
           <br />
           {config.bride.fullName} con gái của {config.bride.fatherName} · {config.bride.motherName}
-        </SubTitle>
+        </SubTitle> */}
+        <div className={`flex flex-col gap-4 items-center`}>
+          <div>
+            <div className='w-[200px] h-[300px] overflow-hidden'>
+              <Image
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="w-full h-auto"
+                src="/resources/groom.JPG"
+                alt="PVcomBank"
+              />
+            </div>
+            {/* <div className="absolute top-4 right-4">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                <CloseIcon />
+              </button>
+            </div> */}
+          </div>
+
+          <div className="flex flex-col gap-6 p-6 max-h-full">
+            <p className="text-pvcb-title-3 text-neutral-900 font-bold">Lưu ý khi mở tài khoản</p>
+          </div>
+        </div>
       </Layout>
     </section>
   );
