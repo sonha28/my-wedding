@@ -70,7 +70,7 @@ const Quote = ({ config }: GreetingProps) => {
         <Image
           src="/resources/image-quote.JPG"
           alt="heart"
-          className="  blur-md"
+          className=" blur-sm"
           width={width}
           height={42}
         />
