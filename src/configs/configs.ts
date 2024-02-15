@@ -1,12 +1,3 @@
-// import TitleImage from '../../public/resources/Title.JPG';
-// import LocationMapImage from '/resources/LocationMap.png';
-// import GalleryPhoto1 from '../resources/Gallery_Photo_1.JPG';
-// import GalleryPhoto2 from '../resources/Gallery_Photo_2.JPG';
-// import GalleryPhoto3 from '../resources/Gallery_Photo_3.JPG';
-// import GalleryPhoto4 from '../resources/Gallery_Photo_4.JPG';
-// import GalleryPhoto5 from '../resources/Gallery_Photo_5.JPG';
-// import GalleryPhoto6 from '../resources/Gallery_Photo_6.JPG';
-
 const Configs: ConfigsType = {
   url: 'http://localhost:3000',
   kakaoToken: '카카오톡 API 토큰을 입력해주세요!',
